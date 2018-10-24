@@ -28,7 +28,7 @@ Install Package "keypirinha-volumecontrol"
 
 ### Manually
 
-* Download the `PHPDocSearch.keypirinha-package` from the [releases](https://github.com/Fuhrmann/keypirinha-phpdocsearch/releases/latest).
+* Download the `VolumeControl.keypirinha-package` from the [releases](https://github.com/Fuhrmann/keypirinha-volumecontrol/releases/latest).
 * Copy the file into `%APPDATA%\Keypirinha\InstalledPackages` (installed mode) or
   `<Keypirinha_Home>\portable\Profile\InstalledPackages` (portable mode)
 
