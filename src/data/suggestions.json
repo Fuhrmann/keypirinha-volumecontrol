@@ -1,0 +1,34 @@
+[
+  {
+    "label": "Current volume {}%",
+    "method": "get_current_volume",
+    "description": "Shows the current volume",
+    "target": "volume:set"
+  },
+  {
+    "label": "{}",
+    "method": "get_mute_text",
+    "description": "Mute/unmute the volume",
+    "target": "volume:set:0"
+  },
+  {
+    "label": "Volume max",
+    "description": "Set volume to max",
+    "target": "volume:set:100"
+  },
+  {
+    "label": "Low volume: 25%",
+    "description": "Set the volume to 25%",
+    "target": "volume:set:25"
+  },
+  {
+    "label": "Middle volume: 50%",
+    "description": "Set the volume to 50%",
+    "target": "volume:set:50"
+  },
+  {
+    "label": "High volume: 75%",
+    "description": "Set the volume to 75%",
+    "target": "volume:set:75"
+  }
+]
