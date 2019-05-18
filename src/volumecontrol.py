@@ -14,12 +14,17 @@ class VolumeControl(kp.Plugin):
     # The itemcategory of the suggestions of this package
     VOLUME_SUGGESTION = kp.ItemCategory.USER_BASE + 1
 
+    # Regular expression pattern for setting volume percentage with 
+    # any non-empty prefix of "volume" followed by a number
+    SET_VOLUME_REGEX = r'(?i)^(v(o(l(u(me?)?)?)?)?)+?\s*?(\d+)'
+
     # Target used to set the volume
     TARGET_SETVOLUME = "volume:set"
 
     def __init__(self):
         super().__init__()
         self.volume_control = IAudioEndpointVolume.get_default()
+        self.re_set_volume  = re.compile(self.SET_VOLUME_REGEX)
 
     def on_catalog(self):
         self.merge_catalog([
@@ -97,9 +102,9 @@ class VolumeControl(kp.Plugin):
 
     # Search for a number in a string
     def search_volume_level(self, text):
-        number = re.search(r'\d+', text)
-        if number:
-            number = int(number.group())
+        match = re.search(self.re_set_volume, text)
+        if match:
+            number = int(match.groups()[-1])
             return min(number, 100)
 
         return False
